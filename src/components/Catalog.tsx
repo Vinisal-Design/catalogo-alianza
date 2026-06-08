@@ -62,15 +62,15 @@ export default function Catalog({ products }: { products: Product[] }) {
     <main className="min-h-screen">
       {/* ===== HERO ===== */}
       <header className="relative overflow-hidden bg-ink text-sand">
-        <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_30%_20%,#c8643c,transparent_55%),radial-gradient(circle_at_80%_70%,#3a4a63,transparent_55%)]" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-10 pb-12 sm:pt-16 sm:pb-16">
-          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.45em] text-accent">
+        <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-14 sm:pt-20 sm:pb-20">
+          <div className="reveal flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.45em] text-sand/60">
+            <span className="h-px w-8 bg-sand/40" />
             Alianza · Jeans
-          </p>
-          <h1 className="reveal mt-3 font-display text-[2.7rem] leading-[0.95] sm:text-7xl">
+          </div>
+          <h1 className="reveal mt-5 font-display text-[3rem] font-semibold leading-[0.92] tracking-tight sm:text-8xl">
             Catálogo
             <br />
-            <span className="text-sand/60">Coleção Completa</span>
+            <span className="text-sand/45">Coleção Completa</span>
           </h1>
           <p className="reveal mt-5 max-w-md text-sm leading-relaxed text-sand/70">
             {products.length} peças em jeans — jaquetas, calças, shorts e saias.
@@ -113,7 +113,7 @@ export default function Catalog({ products }: { products: Product[] }) {
               onChange={(e) => setQuery(e.target.value)}
               inputMode="search"
               placeholder="Buscar por nome, REF ou cor…"
-              className="w-full rounded-full border border-ink/15 bg-white/70 py-2.5 pl-10 pr-4 text-sm outline-none transition focus:border-accent focus:bg-white"
+              className="w-full rounded-full border border-line bg-paper py-2.5 pl-10 pr-4 text-sm outline-none transition focus:border-ink focus:bg-white"
             />
             {query && (
               <button
@@ -131,20 +131,20 @@ export default function Catalog({ products }: { products: Product[] }) {
               <button
                 key={c.key}
                 onClick={() => setCat(c.key)}
-                className={`whitespace-nowrap rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition ${
+                className={`whitespace-nowrap rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition ${
                   cat === c.key
-                    ? "bg-ink text-sand"
-                    : "bg-white/60 text-ink/60 hover:bg-white"
+                    ? "border-ink bg-ink text-sand"
+                    : "border-line bg-transparent text-muted hover:border-ink hover:text-ink"
                 }`}
               >
                 {c.label}
               </button>
             ))}
-            <span className="mx-1 h-5 w-px shrink-0 bg-ink/15" />
+            <span className="mx-1 h-5 w-px shrink-0 bg-line" />
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as typeof sort)}
-              className="shrink-0 rounded-full border border-ink/15 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-ink/70 outline-none"
+              className="shrink-0 rounded-full border border-line bg-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted outline-none transition hover:border-ink"
             >
               <option value="relevancia">Ordenar</option>
               <option value="menor">Menor preço</option>
