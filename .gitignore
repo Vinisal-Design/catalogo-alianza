@@ -1,0 +1,10 @@
+/node_modules
+/.next
+/out
+*.log
+.DS_Store
+.vercel
+next-env.d.ts
+/.playwright-mcp
+_probe.json
+_imgsizes.txt
