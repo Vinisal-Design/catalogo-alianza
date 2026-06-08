@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter, Cormorant_Garamond } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -10,12 +10,6 @@ const display = Bricolage_Grotesque({
 const body = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  display: "swap",
-});
-const brand = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-brand",
   display: "swap",
 });
 
@@ -42,10 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${display.variable} ${body.variable} ${brand.variable}`}
-    >
+    <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
       <body className="bg-sand text-ink font-body antialiased">{children}</body>
     </html>
   );
