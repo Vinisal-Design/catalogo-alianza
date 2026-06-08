@@ -4,6 +4,7 @@ import { useMemo, useState, useEffect } from "react";
 import type { Product } from "../types";
 import ProductCard from "./ProductCard";
 import ProductModal from "./ProductModal";
+import Logo from "./Logo";
 
 type CatKey = "todos" | "feminino" | "masculino" | "jaquetas";
 
@@ -62,10 +63,14 @@ export default function Catalog({ products }: { products: Product[] }) {
     <main className="min-h-screen">
       {/* ===== HERO ===== */}
       <header className="relative overflow-hidden bg-ink text-sand">
-        <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-14 sm:pt-20 sm:pb-20">
+        {/* logo bar */}
+        <div className="relative flex justify-center border-b border-sand/10 px-5 pt-8 pb-6 sm:pt-10 sm:pb-8">
+          <Logo className="reveal text-sand" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-5 pt-10 pb-14 sm:pt-12 sm:pb-20">
           <div className="reveal flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.45em] text-sand/60">
             <span className="h-px w-8 bg-sand/40" />
-            Alianza · Jeans
+            Coleção 2025
           </div>
           <h1 className="reveal mt-5 font-display text-[3rem] font-semibold leading-[0.92] tracking-tight sm:text-8xl">
             Catálogo
@@ -176,9 +181,9 @@ export default function Catalog({ products }: { products: Product[] }) {
 
       {/* ===== FOOTER ===== */}
       <footer className="mt-8 border-t border-ink/10 bg-ink text-sand">
-        <div className="mx-auto max-w-6xl px-5 py-10">
-          <p className="font-display text-3xl">Alianza Jeans</p>
-          <p className="mt-2 max-w-sm text-sm text-sand/60">
+        <div className="mx-auto max-w-6xl px-5 py-12 text-center">
+          <Logo className="mx-auto text-sand" />
+          <p className="mx-auto mt-5 max-w-sm text-sm text-sand/60">
             Catálogo de moda jeans. Preços e referências sujeitos a alteração.
             Consulte disponibilidade.
           </p>
