@@ -65,7 +65,7 @@ export default function Catalog({ products }: { products: Product[] }) {
         <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-14 sm:pt-20 sm:pb-20">
           <div className="reveal flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.45em] text-sand/60">
             <span className="h-px w-8 bg-sand/40" />
-            Coleção 2025
+            Moda Jeans
           </div>
           <h1 className="reveal mt-5 font-display text-[3rem] font-semibold leading-[0.92] tracking-tight sm:text-8xl">
             Catálogo
