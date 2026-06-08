@@ -37,8 +37,8 @@ export default function ProductCard({
           {product.name}
         </h3>
         <div className="mt-1 flex items-baseline justify-between">
-          <span className="font-display text-lg text-ink">
-            {product.price ? `R$ ${product.price}` : "Consultar"}
+          <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+            Consultar
           </span>
           {product.ref && (
             <span className="text-[10px] uppercase tracking-wider text-ink/40">

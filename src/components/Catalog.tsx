@@ -74,7 +74,7 @@ export default function Catalog({ products }: { products: Product[] }) {
           </h1>
           <p className="reveal mt-5 max-w-md text-sm leading-relaxed text-sand/70">
             {products.length} peças em jeans — jaquetas, calças, shorts e saias.
-            Toque em qualquer item para ver detalhes e pedir.
+            Toque em qualquer item para consultar medidas, estoque e preço.
           </p>
           <div className="reveal mt-7 flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-widest text-sand/50">
             <span>

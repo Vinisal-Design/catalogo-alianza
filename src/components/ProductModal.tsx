@@ -10,12 +10,11 @@ export default function ProductModal({
   onClose: () => void;
 }) {
   const msg = encodeURIComponent(
-    `Olá! Tenho interesse nesta peça do catálogo Alianza:\n\n` +
+    `Olá! Gostaria de consultar esta peça do catálogo Alianza:\n\n` +
       `${product.name}\n` +
       (product.color ? `Cor: ${product.color}\n` : "") +
       (product.ref ? `REF: ${product.ref}\n` : "") +
-      (product.price ? `Preço: R$ ${product.price}\n` : "") +
-      `\nPode me passar mais informações?`
+      `\nPode me informar medidas, estoque e preço?`
   );
   const waLink = `https://wa.me/${whatsapp}?text=${msg}`;
 
@@ -67,10 +66,13 @@ export default function ProductModal({
               <p className="mt-1 text-sm text-ink/60">Cor: {product.color}</p>
             )}
 
-            <div className="mt-5 flex items-baseline gap-3">
-              <span className="font-display text-4xl text-ink">
-                {product.price ? `R$ ${product.price}` : "Sob consulta"}
+            <div className="mt-5">
+              <span className="font-display text-3xl text-ink">
+                Preço sob consulta
               </span>
+              <p className="mt-1 text-sm text-ink/60">
+                Consulte medidas, estoque e preço pelo WhatsApp.
+              </p>
             </div>
 
             {product.ref && (
@@ -89,10 +91,10 @@ export default function ProductModal({
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm5.8 14.08c-.24.68-1.42 1.3-1.95 1.34-.5.05-1.13.27-3.8-.8-3.2-1.29-5.24-4.56-5.4-4.77-.16-.21-1.3-1.73-1.3-3.3s.82-2.34 1.11-2.66c.29-.32.63-.4.84-.4.21 0 .42 0 .6.01.2.01.46-.07.72.55.27.64.91 2.2.99 2.36.08.16.13.34.03.55-.1.21-.16.34-.31.52-.16.18-.33.4-.47.54-.16.16-.32.33-.14.64.18.31.81 1.34 1.74 2.17 1.19 1.06 2.2 1.39 2.51 1.55.31.16.49.13.67-.08.18-.21.77-.9.98-1.21.21-.31.42-.26.71-.16.29.11 1.84.87 2.16 1.03.31.16.52.24.6.37.08.13.08.76-.16 1.44Z" />
                 </svg>
-                Pedir no WhatsApp
+                Consultar disponibilidade
               </a>
               <p className="mt-3 text-center text-[11px] text-ink/40">
-                Preço sujeito a alteração · consulte disponibilidade
+                Medidas, estoque e preço sob consulta
               </p>
             </div>
           </div>
